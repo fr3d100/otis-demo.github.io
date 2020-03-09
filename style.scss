@@ -1,0 +1,96 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$otis-blue: #041E42;
+$otis-pink: #F65275;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.nav-bar-pink-title h1 {
+    line-height: 50px;
+    font-size: 30px;
+}
+
+.bg-blue{
+    background-color: $otis-blue;
+}
+
+.bg-pink, .btn-pink{
+    background-color: $otis-pink;
+    color: #fff;
+}
+
+
+.btn-pink, .btn-pink:hover {
+    color: #fff;
+}
+
+
+.nav-link{
+    color: #041E42;
+}
+
+.calendar{
+    background-color: #ecf0f1;
+  }
+
+.calendar-month-change{
+    background-color: #F65275;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px; 
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+
+  .calendar-month-title{
+      font-weight: 600;
+      line-height: 40px;
+      font-size: 1.5em;
+  }
+
+.pick-shift, .pick-date {
+    background-color: #fff;
+}
+
+.pick-shift-element{
+    height:60px;
+    background-color: #ecf0f1;
+}
+
+.shift-hours{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.pick-date-row {
+    margin-top: 20px; 
+}
+
+
+.pick-date-header-days-item{
+    text-align: center;
+    font-weight: 600;
+}
+
+.pick-date-day, .pick-date-day-available, .pick-date-day-active {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin: 0; 
+    padding: 0;
+}
+
+.pick-date-day-available {
+    border: solid 2px #F65275;
+    border-radius: 25px;
+}
+
+.pick-date-day-active, .pick-date-day-active:hover {
+    background-color:  #F65275;
+    color: #fff;
+}

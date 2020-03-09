@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css" >
+
+    <title>OTIS - Calendar</title>
+  </head>
+  <body>
+      <div class="row" >
+        <nav class="navbar navbar-dark bg-blue w-100">
+            <a class="navbar-brand pl-3" href="#">
+                <img src="./otis-logo-white.png" alt=""> 
+            </a>
+        </nav>
+      </div>
+      <div class="row" >
+            <nav class="navbar navbar-dark bg-pink w-100  d-flex justify-content-start align-items-center p-2">
+                <div class="profile-pic ml-3 mr-3"><img src="./foued.png" width="50" height="50" alt=""> </div>
+                <div class="nav-bar-pink-title"><h1> Prendre Rendez-vous avec Foued Arfaoui </h1></div>
+            </nav>
+          </div>
+
+    <div class="container mt-5 p-5 calendar">
+				<!-- <div class="row d-felx justify-content-center w-100 mb-5">
+						<div class="col-12 text-center">
+							<h3>Février 2020</h3>
+						</div>
+				</div> -->
+				<div class="row m-3 calendar-month d-flex justify-content-between mb-5">
+						<div class="calendar-month-change"><</div>
+						<div class="calendar-month-title">Février</div>
+						<div class="calendar-month-change">></div>
+				</div>
+							<div class="row d-felx justify-content-between">
+									<div class="col-12 ">
+											<div class="nav flex-row flex-wrap nav-pills calendar-items" id="v-pills--tab" role="tablist" aria-orientation="vertical">
+													<a class="calendar-day head-day"   href="#" role="tab" >Lundi</a>
+													<a class="calendar-day head-day"   href="#" role="tab" >Mardi</a>
+													<a class="calendar-day head-day"   href="#" role="tab" >Mercredi</a>
+													<a class="calendar-day head-day"   href="#" role="tab" >Jeudi</a>
+													<a class="calendar-day head-day"   href="#" role="tab" >Vendredi</a>
+
+													<a class="available nav-link calendar-day" id="v-pills-home-tab"  data-toggle="modal" data-target="#shifts-3" >3</a>
+													<a class=" nav-link calendar-day "   href="#" role="tab" >4</a>
+													<a class="available nav-link calendar-day" id="v-pills-profile-tab" data-toggle="modal" data-target="#shifts-5" >5</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >6</a>
+													<a class="nav-link calendar-day"  href="#" role="tab" >7</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >10</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >11</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >12</a>
+													<a class="available nav-link calendar-day" id="v-pills-settings-tab" data-toggle="modal" data-target="#shifts-13"  >13</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >14</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >17</a>
+													<a class="available nav-link calendar-day" id="v-pills-settings-tab" data-toggle="modal" data-target="#shifts-18" >18</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >19</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >20</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >21</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >24</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >25</a>
+													<a class="available nav-link calendar-day" id="v-pills-settings-tab" data-toggle="modal" data-target="#shifts-26" >26</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >27</a>
+													<a class="nav-link calendar-day"   href="#" role="tab" >28</a>
+											</div>
+									</div>
+							</div>
+						</div>
+						
+						<style>
+
+						.head-day, .head-day:hover {
+								color: #041E42;
+								text-decoration: none;
+								cursor: default;
+								margin-bottom: 40px !important;
+
+						}
+
+							.calendar-items>a {
+								cursor : not-allowed;
+							}
+
+							.calendar-items>a:hover {
+								color: #000 !important;
+							}
+							.calendar-items> .available:hover {
+								color: #F65275 !important;
+							}
+							.calendar-items> .active:hover {
+								color: #fff !important;
+							}
+
+							.calendar-items>  .available {
+								cursor: pointer;
+								border: solid 2px;
+								border-radius: calc(width / 2); 
+								border-color: #F65275;
+							}
+
+							.calendar-items> .active {
+								background-color: #F65275 !important;
+							}
+
+
+
+						/* .calendar-wrap{
+							margin: 0 100px;
+						} */
+
+						.calendar-items>* {
+							max-width: 1000px;
+						}
+
+						.calendar-day{
+							/* max-width: 200px; */
+							text-align: center;
+							font-size: 20px;
+							margin: auto;
+						}
+
+						.calendar-items>* {
+							flex: 1 1 20%;
+							margin-bottom: 10px;
+						}
+					
+						
+						</style>
+            
+  
+
+		</div>
+		
+		<!-- Modal shift-3 -->
+		<div class="modal fade" id="shifts-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">Lundi 3 février</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+							<h5 class="mb-3"> Choisissez votre horaire</h5>
+							<div class="tab-pane fade show active d-flex flex-column justify-content-between align-items-center" >
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours">13h-13h30</div>
+											<div class="shift-btn" > <button style="display: inline-block" type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>			
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+										<div class="shift-hours" >13h30-14h</div>
+										<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+									</div>
+								</div>
+            </div>
+            <div class="modal-footer">
+                <a href="#"  data-dismiss="modal">Choisir un autre jour</a>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+		
+		<!-- Modal shift-5 -->
+		<div class="modal fade" id="shifts-5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">Mercredi 5 février</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+							<h5 class="mb-3"> Choisissez votre horaire</h5>
+							<div class="tab-pane fade show active d-flex flex-column justify-content-between align-items-center" >
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours">13h-13h30</div>
+											<div class="shift-btn" > <button style="display: inline-block" type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>			
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+										<div class="shift-hours" >13h30-14h</div>
+										<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours" >14h30-15h</div>
+											<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+										</div>
+								</div>
+            </div>
+            <div class="modal-footer">
+                <a href="#"  data-dismiss="modal">Choisir un autre jour</a>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+		
+		<!-- Modal shift-13 -->
+		<div class="modal fade" id="shifts-13" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">Jeudi 13 février</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+								<h5 class="mb-3"> Choisissez votre horaire</h5>
+							<div class="tab-pane fade show active d-flex flex-column justify-content-between align-items-center" >
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours">10h-10h30</div>
+											<div class="shift-btn" > <button style="display: inline-block" type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>			
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+										<div class="shift-hours" >10h30-11h</div>
+										<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours" >11h-11h30</div>
+											<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+										</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours" >11h30-12h</div>
+											<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+										</div>
+								</div>
+            </div>
+            <div class="modal-footer">
+                <a href="#"  data-dismiss="modal">Choisir un autre jour</a>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+		
+
+		<!-- Modal shift-18 -->
+		<div class="modal fade" id="shifts-18" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">Mardi 18 février</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+								<h5 class="mb-3"> Choisissez votre horaire</h5>
+							<div class="tab-pane fade show active d-flex flex-column justify-content-between align-items-center" >
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours">9h-9h30</div>
+											<div class="shift-btn" > <button style="display: inline-block" type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>			
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+										<div class="shift-hours" >9h30-10h</div>
+										<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours">10h30-11h</div>
+											<div class="shift-btn" > <button style="display: inline-block" type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>			
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours">11h30-12h</div>
+											<div class="shift-btn" > <button style="display: inline-block" type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>			
+									</div>
+								</div>
+            </div>
+            <div class="modal-footer">
+                <a href="#"  data-dismiss="modal">Choisir un autre jour</a>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+		
+		<!-- Modal shift-26 -->
+		<div class="modal fade" id="shifts-26" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLabel">Mercredi 26 février</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+								<h5 class="mb-3"> Choisissez votre horaire</h5>
+							<div class="tab-pane fade show active d-flex flex-column justify-content-between align-items-center" >
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+											<div class="shift-hours">11h-11h30</div>
+											<div class="shift-btn" > <button style="display: inline-block" type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>			
+									</div>
+									<div class="m-3 w-100 d-flex flex-row justify-content-around align-items-center">
+										<div class="shift-hours" >15h30-16h</div>
+										<div class="shift-btn"> <button type="button" class="btn btn-pink bg-pink" data-dismiss="modal" data-toggle="modal" data-target="#modal1"> Selectionner  </button> </div>	
+									</div>
+								</div>
+            </div>
+            <div class="modal-footer">
+                <a href="#"  data-dismiss="modal">Choisir un autre jour</a>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+		
+
+      
+      <!-- Modal 1 -->
+      <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Finaliser votre prise de RDV</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Votre nom*</label>
+                            <input type="email" class="form-control" id="name" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Votre société*</label>
+                            <input type="email" class="form-control" id="company" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Votre email*</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Votre téléphone*</label>
+                            <input type="phone" class="form-control" id="phone">
+                            <small id="phoneHelp" class="form-text text-muted">Vous serez contacté sur ce numéro.</small>
+
+												</div>
+												<div class="form-group">
+														<label for="exampleFormControlTextarea1">Votre message (facultatif)</label>
+														<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+													</div>
+                        
+                        <button type="button" class="btn btn-pink" data-toggle="modal" data-dismiss="modal" data-target="#modal2"> Confirmer  </button>
+                        </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#"  data-dismiss="modal">Choisir un autre créneau</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+        <!-- Modal 2 -->
+        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">C'est confirmé !</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                            <h2>Votre RDV avec Fred Arfaoui est confirmé !</h2>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">J'ai compris</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+            </div>
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
